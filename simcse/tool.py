@@ -62,7 +62,7 @@ class SimCSE(object):
         embedding_list = [] 
         with torch.no_grad():
             total_batch = len(sentence) // batch_size + (1 if len(sentence) % batch_size > 0 else 0)
-            for batch_id in tqdm(range(total_batch)):
+            for batch_id in range(total_batch):
                 inputs = self.tokenizer(
                     sentence[batch_id*batch_size:(batch_id+1)*batch_size], 
                     padding=True, 
